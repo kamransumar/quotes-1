@@ -1,0 +1,20 @@
+<div class="jumbotron">
+  <h1>Quote Entry</h1>
+  <form (ngsubmit)="onSubmit()" #quoteForm="ngForm">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" class="form-control" id="name" required
+      [(ngModel)]="formQuote.name" name="name" #name="ngModel">
+      <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Your Full Name Is Required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="quote">Enter Your Quote</label>
+      <input type="text" class="form-control" id="quote" required
+      [(ngModel)]="formQuote.name" name="quote" #name="ngModel">
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">Your Quote Is Required
+      </div>
+    </div>
+
+  </form>
+</div>
