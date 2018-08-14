@@ -19,6 +19,7 @@
       <label for="quote">Enter The Quote</label>
       <input type="text" class="form-control" id="quote" required
       [(ngModel)]="formQuote.quote" name="quote" #name="ngModel">
+      <!-- <textarea class="form-control" id="quote" name="quote" rows="3" cols="80"></textarea> -->
       <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger"> The Quote Is Required
       </div>
     </div>
@@ -28,8 +29,6 @@
     <i>without</i> reset
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </form>
-</div>
-</form>
 </div>
 
 <div [hidden]="!submitted">

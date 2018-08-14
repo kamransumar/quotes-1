@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { QuoteComponent } from './quote/quote.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { UiModule } from './ui/ui.module';
-import { QuoteServiceModule } from './quote-service/quote-service.module';
+import { QuoteService } from './quote-service/quote-service.module';
 
 @NgModule({
   declarations: [
@@ -16,10 +16,9 @@ import { QuoteServiceModule } from './quote-service/quote-service.module';
   imports: [
     BrowserModule,
     UiModule,
-    QuoteServiceModule,
     FormsModule
   ],
-  providers: [],
+  providers: [QuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

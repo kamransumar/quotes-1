@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { quote } from '../quote';
-@NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: []
+import { Injectable } from '@angular/core';
+import { Quotes } from '../quotes';
+import { Quote } from '../quote';
+@Injectable({
+  providedIn: 'root'
 })
-export class QuoteServiceModule {
+
+export class QuoteService {
   constructor() { }
 
   getAllQuotes(): Quote[] {
