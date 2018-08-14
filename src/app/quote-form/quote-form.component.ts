@@ -10,21 +10,21 @@ import { QuoteService } from '../quote-service/quote-service.module';
 })
 export class QuoteFormComponent implements OnInit {
 quotes: Quote[];
-formQuote = new Quote('', '' , '');
+formQuote = new Quote(0, '' , '', '');
 
 submitted = false;
 
 onSubmit() { this.submitted = true; }
 
  newQuote() {
-    this.formQuote = new Quote('', '', '');
+    this.formQuote = new Quote(0, '', '', '');
     this.quotes.push(this.formQuote);
   }
   updateQuoteById(id: number): Quote {
         for (const quote of this.quotes) {
           if (quote.id === id) {
-            this.formQuote = new Quote(quote.id, quote.name, quote.quote,
-            quote.tag, quote.note);
+            this.formQuote = new Quote(quote.id, quote.name, quote.author,
+            quote.quote, );
             return this.formQuote;
           }
     }
