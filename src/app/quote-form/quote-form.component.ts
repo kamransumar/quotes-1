@@ -10,16 +10,24 @@ import { QuoteService } from '../quote-service/quote-service.module';
 })
 export class QuoteFormComponent implements OnInit {
 quotes: Quote[];
-formQuote = new Quote('full name', ' authors name' , 'the quote');
+formQuote = new Quote('', '' , '');
 
 submitted = false;
 
 onSubmit() { this.submitted = true; }
 
  newQuote() {
-    const quoteLength = this.quotes.length;
     this.formQuote = new Quote('', '', '');
     this.quotes.push(this.formQuote);
+  }
+  updateQuoteById(id: number): Quote {
+        for (const quote of this.quotes) {
+          if (quote.id === id) {
+            this.formQuote = new Quote(quote.id, quote.name, quote.quote,
+            quote.tag, quote.note);
+            return this.formQuote;
+          }
+    }
   }
   constructor(quoteService: QuoteService) { this.quotes = quoteService.getAllQuotes();
 }
