@@ -9,12 +9,36 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="quote">Enter Your Quote</label>
-      <input type="text" class="form-control" id="quote" required
-      [(ngModel)]="formQuote.name" name="quote" #name="ngModel">
-      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">Your Quote Is Required
+      <label for="author">Enter The Author Of The Quote</label>
+      <input type="text" class="form-control" id="author" required
+      [(ngModel)]="formQuote.author" name="author" #name="ngModel">
+      <div [hidden]="author.valid || author.pristine" class="alert alert-danger"> The Author Is Required
       </div>
     </div>
-
+    <div class="form-group">
+      <label for="quote">Enter The Quote</label>
+      <input type="text" class="form-control" id="quote" required
+      [(ngModel)]="formQuote.quote" name="quote" #name="ngModel">
+      <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger"> The Quote Is Required
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="!formQuote.form.valid">Submit</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button type="button" class="btn btn-default" (click)="newQuote()">New Quote</button>
+    <i>without</i> reset
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </form>
+</div>
+</form>
+</div>
+
+<div [hidden]="!submitted">
+<ul *ngFor='let quote of quotes'>
+    <li>
+      <p>{{quote.name}}</p>
+      <p>{{quote.author}}</p>
+      <p>{{quote.quote}}</p>
+      <button class="btn btn-primary" (click)="submitted=false" (click)="updateQuoteById(quote.id)">Edit</button>
+    </li>
+</ul>
 </div>
