@@ -29,6 +29,14 @@ onSubmit() { this.submitted = true; }
           }
     }
   }
+  deleteQuote(isComplete, index) {
+    if (isComplete) {
+      const toDelete = confirm('are you sure you want to delete this quote?');
+      if (toDelete) {
+        this.quotes.splice(index);
+      }
+    }
+  }
   constructor(quoteService: QuoteService) { this.quotes = quoteService.getAllQuotes();
 }
 

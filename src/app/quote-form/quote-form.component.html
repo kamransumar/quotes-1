@@ -34,12 +34,11 @@
 <div [hidden]="!submitted">
 <ul *ngFor='let quote of quotes'>
     <li>
-      <p>{{quote.name}}</p>
-      <p>{{quote.author}}</p>
-      <p>{{quote.quote}}</p>
+      <p><strong>Name: </strong>{{quote.name}}</p>
+      <p><strong>Author: </strong>{{quote.author}}</p>
+      <p><strong>Quote: </strong>{{quote.quote}}</p>
       <button class="btn btn-primary" (click)="submitted=true" (click)="updateQuoteById(quote.id)">Edit</button>
-    </li>
-    <li>
+        <button type="button" name="button" (click)="deleteQuote(true)" class="btn btn-danger">delete</button>
       <like-box></like-box>
     </li>
 </ul>
