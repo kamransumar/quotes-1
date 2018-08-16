@@ -42,6 +42,7 @@ onSubmit() { this.submitted = true;
 }
 
   ngOnInit() {
+  //   this.quotes;
   }
 
 }
