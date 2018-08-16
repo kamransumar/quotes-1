@@ -14,11 +14,12 @@ formQuote = new Quote(0, '' , '', '');
 
 submitted = false;
 
-onSubmit() { this.submitted = true; }
+onSubmit() { this.submitted = true;
+ this.quotes.push(this.formQuote);
+}
 
  newQuote() {
     this.formQuote = new Quote(0, '', '', '');
-    this.quotes.push(this.formQuote);
   }
   updateQuoteById(id: number): Quote {
         for (const quote of this.quotes) {
@@ -33,7 +34,7 @@ onSubmit() { this.submitted = true; }
     if (isComplete) {
       const toDelete = confirm('are you sure you want to delete this quote?');
       if (toDelete) {
-        this.quotes.splice(index);
+        this.quotes.splice(index, 1);
       }
     }
   }
